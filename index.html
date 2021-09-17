@@ -21,8 +21,37 @@
 </head>
 <body>
 
-    <div id="app" class="container-fluid">
-    
+    <div id="app" class="">
+
+        <main>
+
+            <div id="ms_green-header" class="ms_green-bg"></div>
+            <div id="ms_grey-main" class="ms_grey-bg"></div>
+            <div id="ms_content-container" class="container-fluid">
+                <div id="ms_header-row" class="row">
+                    <div id="ms_user" class="col-4 ms_border"></div>
+                    <div id="ms_current-chat" class="col-8 ms_border"></div>
+                </div>
+                <div id="ms_content-row" class="row">
+                    <div class="col-4 ms_border">
+                        <div class="row">
+                            <div id="ms_notification-banner" class="col-12"></div>
+                            <div class="col-12"></div>
+                            <div class="col-12" v-for="(user, index) in contacts">
+                                {{ user.name }}
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-8 ms_border">
+                        <div class="row">
+                            <div class="col-12"></div>
+                            <div class="col-12"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
         
     </div>
     

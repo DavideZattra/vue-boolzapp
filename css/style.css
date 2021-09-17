@@ -1,0 +1,44 @@
+.ms_green-bg{
+    background-color: rgba(0,150,136,255);
+}
+
+.ms_grey-bg{
+    background-color: rgba(219,219,211,255);
+}
+
+#ms_green-header{
+    height: 15vh;
+}
+
+#ms_grey-main{
+    height: 85vh;
+}
+
+#ms_content-container{
+    height: 95vh;
+    width: 85vw;    
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+}
+
+#ms_header-row{
+    height: 75px;
+    background-color: rgba(234,234,234,255);
+}
+
+#ms_content-row{
+    height: calc(100% - 75px);
+}
+
+.ms_border{
+    border: 2px solid black;
+
+}
+
+#ms_notification-banner{
+    background-color: rgba(142,218,252,255);
+}
+
