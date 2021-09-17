@@ -1,3 +1,14 @@
+.ms_border{
+    border: 2px solid black;
+
+}
+
+p,
+h5{
+    margin: 0;
+}
+
+
 .ms_green-bg{
     background-color: rgba(0,150,136,255);
 }
@@ -10,6 +21,7 @@
     height: 45px;
     width: 45px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .ms_contacts-text h5{
@@ -21,9 +33,15 @@
     color: rgba(188,188,194,255);
 }
 
-.ms_contact_date{
+.ms_contacts_date{
     font-size: 0.6em;
     color: rgba(188,188,194,255);
+}
+
+.ms_contacts-icons h5 i {
+    padding: 0 4px;
+    color: rgba(177,177,177,255);
+    cursor: pointer;
 }
 
 #ms_green-header{
@@ -54,13 +72,10 @@
 }
 
 #ms_contacts{
+    overflow-y: scroll;
     background-color: white;
 }
 
-.ms_border{
-    border: 2px solid black;
-
-}
 
 
 #ms_notification-banner{
@@ -78,4 +93,29 @@
     color: rgba(142,218,252,255);
 }
 
+#ms_notification-text h5{
+    font-weight: 400;
+    font-size: 0.9em;
+}
 
+#ms_notification-text p {
+    font-size: 0.7em;
+    cursor: pointer;
+}
+
+#ms_chat{
+    height: 100%;
+}
+
+#ms_chat-box{
+    height: calc(100% - 50px);
+    background-image: url(../img/mine.jpg);
+    background-repeat: repeat;
+    background-size: 400px;
+    
+}
+
+#ms_chat-input{
+    height: 50px;
+    background-color: rgba(243,238,234,255);
+}
