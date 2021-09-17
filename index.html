@@ -27,18 +27,44 @@
 
             <div id="ms_green-header" class="ms_green-bg"></div>
             <div id="ms_grey-main" class="ms_grey-bg"></div>
-            <div id="ms_content-container" class="container-fluid">
-                <div id="ms_header-row" class="row">
-                    <div id="ms_user" class="col-4 ms_border"></div>
+            <div id="ms_content-container" class="container-fluid ms_border m-0 p-0">
+                <div id="ms_header-row" class="row m-0 p-0">
+                    <div id="ms_user" class="col-4 ms_border">
+                        <div class="ms_profile-img">
+                            <img src="img/avatar_io.jpg" >
+                        </div>
+                    </div>
                     <div id="ms_current-chat" class="col-8 ms_border"></div>
                 </div>
-                <div id="ms_content-row" class="row">
-                    <div class="col-4 ms_border">
-                        <div class="row">
-                            <div id="ms_notification-banner" class="col-12"></div>
-                            <div class="col-12"></div>
-                            <div class="col-12" v-for="(user, index) in contacts">
-                                {{ user.name }}
+                <div id="ms_content-row" class="row m-0 p-0">
+                    <div class="col-4 ms_border m-0 p-0">
+                        <div class="row m-0 p-0">
+                            <div id="ms_notification-banner" class="col-12 pt-2 pb-2 d-flex">
+                                <div id="ms_notification-bell" class="d-flex justify-content-center align-items-center">
+                                    <h4 class="p-0 m-0"><i class="fas fa-bell-slash "></i></h4>
+                                </div>
+                                <div id="ms_notification-text">
+                                    <h5 class="">Ricevi le notifiche di nuovi messaggi</h5>
+                                    <p class="text-decoration-underline">Attiva notifiche desktop</p>
+                                </div>
+                            </div>
+                            <div class="col-12 d-flex align-items-center bg-white ">
+                                <i class="fas fa-search me-2"></i>
+                                <input class=" flex-grow-1 border-0" type="text" name="" id="" placeholder=" Cerca o inizia una nuova chat">
+                            </div>
+                            <div id="ms_contacts" class="row m-0 p-0">
+                                <div class="col-12 p-2 d-flex" v-for="(user, index) in contacts">
+                                    <div class="ms_profile-img">
+                                        <img :src="'img/avatar' + user.avatar + '.jpg'" >
+                                    </div>
+                                    <div class="ms_contacts-text flex-grow-1">
+                                        <h5>{{ user.name }}</h5>
+                                        <p>{{ user.messages.at(-1).text }}</p>
+                                    </div>
+                                    <div class="ms_contact_date">
+                                        <p>{{ user.messages.at(-1).date }}</p>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>

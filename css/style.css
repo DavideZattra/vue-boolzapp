@@ -6,6 +6,26 @@
     background-color: rgba(219,219,211,255);
 }
 
+.ms_profile-img img{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+}
+
+.ms_contacts-text h5{
+    font-size: 1em;
+}
+
+.ms_contacts-text p{
+    font-size: 0.8em;
+    color: rgba(188,188,194,255);
+}
+
+.ms_contact_date{
+    font-size: 0.6em;
+    color: rgba(188,188,194,255);
+}
+
 #ms_green-header{
     height: 15vh;
 }
@@ -33,12 +53,29 @@
     height: calc(100% - 75px);
 }
 
+#ms_contacts{
+    background-color: white;
+}
+
 .ms_border{
     border: 2px solid black;
 
 }
 
+
 #ms_notification-banner{
     background-color: rgba(142,218,252,255);
 }
+
+#ms_notification-bell{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+#ms_notification-bell h4{
+    color: rgba(142,218,252,255);
+}
+
 
