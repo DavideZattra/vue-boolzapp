@@ -48,7 +48,22 @@
                             </h5>
                         </div>
                     </div>
-                    <div id="ms_current-chat" class="col-8 ms_border"></div>
+                    <div id="ms_current-chat" class="col-8 d-flex justify-content-center align-items-center ms_border">
+                        <div class="ms_profile-img">
+                            <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" >
+                        </div>
+                        <div class="ms_contacts-text flex-grow-1">
+                            <h5>{{ contacts[0].name }}</h5>
+                            <p>Ultimo accesso il {{ contacts[0].messages.at(-1).date }}</p>
+                        </div>
+                        <div class="ms_contacts-icons">
+                            <h5 class="m-0">
+                                <i class="fas fa-search"></i>
+                                <i class="fas fa-paperclip"></i>
+                                <i class="fas fa-ellipsis-v"></i>
+                            </h5>
+                        </div>
+                    </div>
                 </div>
 
                 <div id="ms_content-row" class="row m-0 p-0">
