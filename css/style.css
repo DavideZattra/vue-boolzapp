@@ -1,7 +1,7 @@
-.ms_border{
+/* .ms_border{
     border: 2px solid black;
 
-}
+} */
 
 p,
 h5{
@@ -42,6 +42,18 @@ h5{
     padding: 0 4px;
     color: rgba(177,177,177,255);
     cursor: pointer;
+}
+
+.ms_sent{
+    align-self: flex-end;
+    width: 40%;
+    background-color: rgba(213,249,186,255);
+}
+
+.ms_recieved{
+    align-self: flex-start;
+    width: 40%;
+    background-color: rgba(255,255,255,255);
 }
 
 #ms_green-header{
@@ -115,8 +127,19 @@ h5{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     background-size: 400px;
+    padding: 30px 40px
     
 }
+
+#ms_chat-box>div>h5{
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+#ms_chat-box>div>p{
+    font-size: 0.7em;
+    color: rgba(188,188,194,255);
+}   
 
 #ms_chat-input{
     height: 50px;

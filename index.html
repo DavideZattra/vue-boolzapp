@@ -111,7 +111,12 @@
 
                         <div id="ms_chat" class="row m-0 p-0">
 
-                            <div id="ms_chat-box" class="col-12"></div>
+                            <div id="ms_chat-box" class="col-12 d-flex flex-column ">
+                                <div class="ms_border rounded-3 p-3 mb-3" v-for="(element,index) in contacts[0].messages" :class="(element.status === 'sent') ? 'ms_sent' : 'ms_recieved'">
+                                    <h5>{{ element.text }}</h5>
+                                    <p class="text-end">{{ element.date }}</p>
+                                </div>
+                            </div>
 
                             <div id="ms_chat-input" class="col-12 d-flex justify-content-center align-items-center">
 
