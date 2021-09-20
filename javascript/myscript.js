@@ -95,6 +95,8 @@ var app = new Vue(
 				
 			],
 
+			// copiedContacts : contacts.slice(),
+
 			clickIndex : 0,
 
 			newSentMessageText : '',
@@ -112,6 +114,7 @@ var app = new Vue(
 					text : this.newSentMessageText,
 					status : 'sent'
 				}
+
 
 				if(newSentMessage.text.length>0){
 					
@@ -133,7 +136,7 @@ var app = new Vue(
 				
 			},
 
-			searchFilter : function (){}			
+						
 		},
 		
 

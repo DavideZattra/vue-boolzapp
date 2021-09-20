@@ -63,14 +63,15 @@
                                 
                                 <label for="contact-search" class="bg-white"><i class="fas fa-search ms-2 me-2"></i></label>
                                 <input class=" flex-grow-1 border-0" type="text" name="contact-search" id="contact-search"
-                                    v-model = "searchKey" placeholder=" Cerca o inizia una nuova chat" @keyup.enter="searchFilter(contacts, searchKey)">
+                                    v-model = "searchKey" placeholder=" Cerca o inizia una nuova chat" >
                             </div>
 
-                            <div class="col-12">
+                            <div id="ms_devocambiarlo" class="col-12">
 
                                 <div class="row">
 
-                                    <div class="col-12 p-2 d-flex border-top ms_contact-box" v-for="(user, index) in contacts">
+                                    <div class="col-12 p-2 d-flex border-top ms_contact-box"
+                                    :class="(user.name.toLowerCase().includes(searchKey.toLowerCase())) ? '' : 'd-none'" v-for="(user, index) in contacts">
                                         <div class="ms_profile-img">
                                             <img :src="'img/avatar' + user.avatar + '.jpg'" >
                                         </div>
@@ -82,7 +83,7 @@
                                             <p>{{ user.messages.at(-1).date }}</p>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
 
                             </div>

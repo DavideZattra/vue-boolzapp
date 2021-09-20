@@ -6,7 +6,7 @@
 #app{
     height: 100vh;
     background: linear-gradient(to bottom,
-    rgba(0,150,136,255) 20%, rgba(219,219,211,255) 20% 100%);}
+    rgba(0,150,136,255) 100px, rgba(219,219,211,255) calc(0% + 100px) 100%);}
 
 p,
 h5{
@@ -173,6 +173,10 @@ h5{
     background-color: #eaeaea;
 }
 
-#ms_selectedt-contact{
+#ms_selected-contact{
 
+}
+#ms_devocambiarlo{
+    height: calc(100% - 166px);
+    overflow-y: scroll;
 }
