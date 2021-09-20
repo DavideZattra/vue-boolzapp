@@ -96,11 +96,39 @@ var app = new Vue(
 			],
 
 			clickIndex : 0,
+
+			newSentMessage : '',
+
+			newRecievedMessage : {
+				date: new Date(),
+				text: 'Ok',
+				status : 'recieved'
+			},
 			
 		},
 
 		methods: {
 
+			sendMessage : function(index){
+				let newObj = {
+					date : new Date(),
+					text : this.newSentMessage,
+					status : 'sent'
+				}
+
+				if(newObj.text.length>0){
+					
+					this.contacts[index].messages.push(newObj);
+					
+
+					
+				}
+
+
+				this.newSentMessage = '';
+				
+			}
+			
 			
 		}
 		
