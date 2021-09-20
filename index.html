@@ -36,8 +36,8 @@
                         <div class="ms_profile-img">
                             <img src="img/avatar_io.jpg" >
                         </div>
-                        <div class="ms_contacts-text ps-2  flex-grow-1">
-                            <h5 class="m-0">User Name</h5>
+                        <div class="ms_contacts-text ps-2 ps-2  flex-grow-1">
+                            <h5 class="m-0 pt-3">User Name</h5>
                         </div>
 
                         <div class="ms_contacts-icons">
@@ -50,11 +50,11 @@
                     </div>
                     <div id="ms_current-chat" class="col-8 d-flex justify-content-center align-items-center ms_border">
                         <div class="ms_profile-img">
-                            <img :src="'img/avatar' + contacts[0].avatar + '.jpg'" >
+                            <img :src="'img/avatar' + contacts[clickIndex].avatar + '.jpg'" >
                         </div>
-                        <div class="ms_contacts-text flex-grow-1">
-                            <h5>{{ contacts[0].name }}</h5>
-                            <p>Ultimo accesso il {{ contacts[0].messages.at(-1).date }}</p>
+                        <div class="ms_contacts-text ps-2 flex-grow-1">
+                            <h5>{{ contacts[clickIndex].name }}</h5>
+                            <p>Ultimo accesso il {{ contacts[clickIndex].messages.at(-1).date }}</p>
                         </div>
                         <div class="ms_contacts-icons">
                             <h5 class="m-0">
@@ -68,9 +68,9 @@
 
                 <div id="ms_content-row" class="row m-0 p-0">
 
-                    <div class="col-4 bg-white ms_border m-0 p-0">
+                    <div class="col-4 ms_border m-0 p-0">
 
-                        <div class="row m-0 p-0">
+                        <div id="ms_contacts" class="row m-0 p-0">
 
                             <div id="ms_notification-banner" class="col-12 pt-2 pb-2 d-flex">
                                 <div id="ms_notification-bell" class="d-flex justify-content-center align-items-center">
@@ -83,25 +83,31 @@
                             </div>
 
                             
-                            <div id="ms_contacts" class="row m-0 p-0">
+                            <div id="" class="row m-0 p-0 ms_contacts">
 
                                 <div id="ms_contacts-search" class="col-12 d-flex align-items-center pt-2 pb-2">
-                                    <i class="fas fa-search me-2"></i>
-                                    <input class=" flex-grow-1 border-0" type="text" name="" id="" placeholder=" Cerca o inizia una nuova chat">
+                                    
+                                    <label for="contact-search" class="bg-white"><i class="fas fa-search ms-2 me-2"></i></label>
+                                    <input class=" flex-grow-1 border-0" type="text" name="contact-search" id="contact-search" placeholder=" Cerca o inizia una nuova chat">
                                 </div>
 
-                                <div class="col-12 p-2 d-flex border-top" v-for="(user, index) in contacts">
-                                    <div class="ms_profile-img">
-                                        <img :src="'img/avatar' + user.avatar + '.jpg'" >
-                                    </div>
-                                    <div class="ms_contacts-text flex-grow-1">
-                                        <h5>{{ user.name }}</h5>
-                                        <p>{{ user.messages.at(-1).text }}</p>
-                                    </div>
-                                    <div class="ms_contacts_date">
-                                        <p>{{ user.messages.at(-1).date }}</p>
+                                <div>
+                                    <div class="col-12 p-2 d-flex border-top ms_contact-box" v-for="(user, index) in contacts">
+                                        <div class="ms_profile-img">
+                                            <img :src="'img/avatar' + user.avatar + '.jpg'" >
+                                        </div>
+                                        <div class="ms_contacts-text ps-2 flex-grow-1" @click= 'clickIndex= index'>
+                                            <h5>{{ user.name }}</h5>
+                                            <p>{{ user.messages.at(-1).text }}</p>
+                                        </div>
+                                        <div class="ms_contacts_date">
+                                            <p>{{ user.messages.at(-1).date }}</p>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="ms_whitespace"></div>
+
                             </div>
                             
                         </div>
@@ -112,7 +118,8 @@
                         <div id="ms_chat" class="row m-0 p-0">
 
                             <div id="ms_chat-box" class="col-12 d-flex flex-column ">
-                                <div class="ms_border rounded-3 p-3 mb-3" v-for="(element,index) in contacts[0].messages" :class="(element.status === 'sent') ? 'ms_sent' : 'ms_recieved'">
+                                <div class="ms_border rounded-3 p-3 mb-3" v-for="(element,index) in contacts[clickIndex].messages"
+                                 :class="(element.status === 'sent') ? 'ms_sent' : 'ms_recieved'">
                                     <h5>{{ element.text }}</h5>
                                     <p class="text-end">{{ element.date }}</p>
                                 </div>

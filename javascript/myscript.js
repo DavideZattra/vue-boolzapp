@@ -94,6 +94,8 @@ var app = new Vue(
 				},
 				
 			],
+
+			clickIndex : 0,
 			
 		},
 

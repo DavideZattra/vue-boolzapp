@@ -17,11 +17,28 @@ h5{
     background-color: rgba(219,219,211,255);
 }
 
+.ms_whitespace{
+
+}
+
 .ms_profile-img img{
     height: 45px;
     width: 45px;
     border-radius: 50%;
     cursor: pointer;
+}
+.ms_contacts-text{
+    width: 210px;
+    height: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.ms_contact-box{
+    display: flex;
+    align-content: center;
+    
 }
 
 .ms_contacts-text h5{
@@ -29,8 +46,9 @@ h5{
 }
 
 .ms_contacts-text p{
-    font-size: 0.8em;
+    font-size: 0.85em;
     color: rgba(188,188,194,255);
+    
 }
 
 .ms_contacts_date{
@@ -45,23 +63,25 @@ h5{
 }
 
 .ms_sent{
+    position: relative;
     align-self: flex-end;
-    width: 40%;
+    width: 300px;
     background-color: rgba(213,249,186,255);
 }
 
 .ms_recieved{
+    position: relative;
     align-self: flex-start;
-    width: 40%;
+    width: 300px;
     background-color: rgba(255,255,255,255);
 }
 
 #ms_green-header{
-    height: 15vh;
+    height: 125px;
 }
 
 #ms_grey-main{
-    height: 85vh;
+    height: calc(100vh - 125px);
 }
 
 #ms_content-container{
@@ -84,8 +104,9 @@ h5{
 }
 
 #ms_contacts{
-    overflow-y: scroll;
+    
     background-color: white;
+    /* height: 100%; */
 }
 
 #ms_contacts-search{
@@ -94,6 +115,7 @@ h5{
 }
 
 #ms_notification-banner{
+    height: 60px;
     background-color: rgba(142,218,252,255);
 }
 
@@ -127,17 +149,21 @@ h5{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     background-size: 400px;
-    padding: 30px 40px
+    padding: 30px 40px;
+    overflow-y: scroll;
     
 }
 
 #ms_chat-box>div>h5{
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 #ms_chat-box>div>p{
-    font-size: 0.7em;
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    font-size: 0.6em;
     color: rgba(188,188,194,255);
 }   
 
