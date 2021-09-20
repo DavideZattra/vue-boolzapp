@@ -110,7 +110,7 @@ var app = new Vue(
 
 			sendMessage : function(index){
 				let newSentMessage = {
-					date : new Date().toLocaleString(),
+					date : this.getDateTime(),
 					text : this.newSentMessageText,
 					status : 'sent'
 				}
@@ -122,7 +122,7 @@ var app = new Vue(
 					
 					setTimeout(() => {
 						let newRecievedMessage = {
-							date: new Date().toLocaleString(),
+							date: this.getDateTime(),
 							text: 'Ok',
 							status : 'recieved'
 						};
@@ -135,6 +135,20 @@ var app = new Vue(
 
 				
 			},
+
+			getDateTime : function (){
+				let now = new Date();
+				let dd = String(now.getDate()).padStart(2, '0');
+				let mm = String(now.getMonth() + 1).padStart(2, '0'); 
+				let yyyy = now.getFullYear();
+				let hour = now.getHours();
+				let minutes = now.getMinutes();
+				let seconds = now.getSeconds();
+				
+
+				return dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;		
+
+			}
 
 						
 		},
@@ -152,6 +166,6 @@ var app = new Vue(
 // let hour = now.getHours();
 // let minutes = now.getMinutes();
 // let seconds = now.getSeconds();
-// let time = now.getTime();
+// let time = now.getTime()
 
 // now = dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;
