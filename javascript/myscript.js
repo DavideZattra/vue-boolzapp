@@ -99,11 +99,7 @@ var app = new Vue(
 
 			newSentMessage : '',
 
-			newRecievedMessage : {
-				date: new Date(),
-				text: 'Ok',
-				status : 'recieved'
-			},
+			
 			
 		},
 
@@ -120,12 +116,19 @@ var app = new Vue(
 					
 					this.contacts[index].messages.push(newObj);
 					
+					setTimeout(() => {
+						let newRecievedMessage = {
+							date: now,
+							text: 'Ok',
+							status : 'recieved'
+						};
+						this.contacts[index].messages.push(newRecievedMessage);
+					}, 3000)
+					this.newSentMessage = '';
 
 					
 				}
 
-
-				this.newSentMessage = '';
 				
 			}
 			
@@ -137,7 +140,7 @@ var app = new Vue(
 );
 
 
-// to get the date format required
+// to get the date format required dd/mm/yy h:m:s
 let now = new Date();
 let dd = String(now.getDate()).padStart(2, '0');
 let mm = String(now.getMonth() + 1).padStart(2, '0'); 
