@@ -97,8 +97,9 @@ var app = new Vue(
 
 			clickIndex : 0,
 
-			newSentMessage : '',
+			newSentMessageText : '',
 
+			searchKey: '',
 			
 			
 		},
@@ -106,15 +107,15 @@ var app = new Vue(
 		methods: {
 
 			sendMessage : function(index){
-				let newObj = {
+				let newSentMessage = {
 					date : now,
-					text : this.newSentMessage,
+					text : this.newSentMessageText,
 					status : 'sent'
 				}
 
-				if(newObj.text.length>0){
+				if(newSentMessage.text.length>0){
 					
-					this.contacts[index].messages.push(newObj);
+					this.contacts[index].messages.push(newSentMessage);
 					
 					setTimeout(() => {
 						let newRecievedMessage = {
@@ -124,16 +125,16 @@ var app = new Vue(
 						};
 						this.contacts[index].messages.push(newRecievedMessage);
 					}, 3000)
-					this.newSentMessage = '';
+					this.newSentMessageText = '';
 
 					
 				}
 
 				
-			}
-			
-			
-		}
+			},
+
+			searchFilter : function (){}			
+		},
 		
 
 	}
