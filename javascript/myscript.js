@@ -110,7 +110,7 @@ var app = new Vue(
 
 			sendMessage : function(index){
 				let newSentMessage = {
-					date : now,
+					date : new Date().toLocaleString(),
 					text : this.newSentMessageText,
 					status : 'sent'
 				}
@@ -122,7 +122,7 @@ var app = new Vue(
 					
 					setTimeout(() => {
 						let newRecievedMessage = {
-							date: now,
+							date: new Date().toLocaleString(),
 							text: 'Ok',
 							status : 'recieved'
 						};
@@ -145,13 +145,13 @@ var app = new Vue(
 
 
 // to get the date format required dd/mm/yy h:m:s
-let now = new Date();
-let dd = String(now.getDate()).padStart(2, '0');
-let mm = String(now.getMonth() + 1).padStart(2, '0'); 
-let yyyy = now.getFullYear();
-let hour = now.getHours();
-let minutes = now.getMinutes();
-let seconds = now.getSeconds()
-let time = now.getTime()
+// let now = new Date();
+// let dd = String(now.getDate()).padStart(2, '0');
+// let mm = String(now.getMonth() + 1).padStart(2, '0'); 
+// let yyyy = now.getFullYear();
+// let hour = now.getHours();
+// let minutes = now.getMinutes();
+// let seconds = now.getSeconds();
+// let time = now.getTime();
 
-now = dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;
+// now = dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;
