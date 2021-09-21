@@ -148,13 +148,26 @@ var app = new Vue(
 
 				return dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;		
 
+			},
+
+			showDropdownMenu : function(){
+				const element = document.querySelectorAll(".ms_dropdown-list");
+				console.log(element);
+
+				element.forEach(element => {
+					
+					element.classList.toggle("ms_hidden");
+				});
+
 			}
 
 						
 		},
 		
 
-	}
+	},
+	
+	
 );
 
 

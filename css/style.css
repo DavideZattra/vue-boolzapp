@@ -172,11 +172,40 @@ h5{
 .ms_gray-bg{
     background-color: #eaeaea;
 }
+ul{
 
-#ms_selected-contact{
-
+    list-style: none;
 }
+.ms_dropdown{
+    color: transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.ms_dropdown:hover{
+    color: black;
+    cursor: pointer;
+}
+
+/* #ms_selected-contact{
+
+} */
+
 #ms_devocambiarlo{
     height: calc(100% - 166px);
     overflow-y: scroll;
+}
+
+.ms_hidden{
+    visibility: hidden;
+}
+
+.ms_show {
+    visibility: visible;
+}
+
+.ms_dropdown-item{
+    
 }
