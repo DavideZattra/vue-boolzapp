@@ -159,6 +159,10 @@ var app = new Vue(
 					element.classList.toggle("ms_hidden");
 				});
 
+			},
+
+			deleteMessage : function(index){
+				this.contacts[this.clickIndex].messages.splice(index,1);
 			}
 
 						
