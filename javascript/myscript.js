@@ -178,6 +178,19 @@ var app = new Vue(
 			 */
 			deleteMessage : function(index){
 				this.contacts[this.clickIndex].messages.splice(index,1);
+			},
+
+
+			/**
+			 * function that gives all the info about the choosen message
+			 * 
+			 * @param {*} index that the selected message has in the array
+			 */
+			getInfoMessage : function(index){
+				let date = this.contacts[this.clickIndex].messages[index].date;
+				let text = this.contacts[this.clickIndex].messages[index].text;
+				let status = this.contacts[this.clickIndex].messages[index].status;
+				alert(date + ' ' + text + ' '+ status)
 			}
 
 						

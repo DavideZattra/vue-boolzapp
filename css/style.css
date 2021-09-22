@@ -81,9 +81,18 @@ ul{
     right: 10px;
 }
 
+
 .ms_dropdown:hover{
     color: black;
     cursor: pointer;
+}
+
+.ms_dropdown:hover .ms_dropdown-item{
+    background-color: white;
+}
+
+.ms_dropdown:hover .ms_text-red{
+    color: red;
 }
 
 .ms_hidden{
@@ -93,6 +102,7 @@ ul{
 .ms_show {
     visibility: visible;
 }
+
 
 /* ID STYLING */
 
