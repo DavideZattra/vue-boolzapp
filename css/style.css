@@ -1,21 +1,15 @@
-/* .ms_border{
-    border: 2px solid black;
 
-} */
-
-#app{
-    height: 100vh;
-    background: linear-gradient(to bottom,
-    rgba(0,150,136,255) 100px, rgba(219,219,211,255) calc(0% + 100px) 100%);}
-
+/* GENERAL STYLING */
 p,
 h5{
     margin: 0;
 }
 
-/* .ms_whitespace{
-
-} */
+ul{
+    
+    list-style: none;
+}
+/* CLASSES STYLING */
 
 .ms_profile-img img{
     height: 45px;
@@ -72,6 +66,41 @@ h5{
     background-color: rgba(255,255,255,255);
 }
 
+.ms_height-100{
+    height: 100%;
+}
+
+.ms_gray-bg{
+    background-color: #eaeaea;
+}
+.ms_dropdown{
+    color: transparent;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+.ms_dropdown:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.ms_hidden{
+    visibility: hidden;
+}
+
+.ms_show {
+    visibility: visible;
+}
+
+/* ID STYLING */
+
+#app{
+    height: 100vh;
+    background: linear-gradient(to bottom,
+    rgba(0,150,136,255) 100px, rgba(219,219,211,255) calc(0% + 100px) 100%);
+}   
 
 #ms_content-container{
     height: 95vh;
@@ -81,8 +110,6 @@ h5{
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
-
 
 #ms_content-row{
     height: 100%;
@@ -163,49 +190,7 @@ h5{
     cursor: pointer;
 }
 
-/* NEW CLASSES AND ID */
-
-.ms_height-100{
-    height: 100%;
-}
-
-.ms_gray-bg{
-    background-color: #eaeaea;
-}
-ul{
-
-    list-style: none;
-}
-.ms_dropdown{
-    color: transparent;
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 10px;
-}
-
-.ms_dropdown:hover{
-    color: black;
-    cursor: pointer;
-}
-
-/* #ms_selected-contact{
-
-} */
-
-#ms_devocambiarlo{
+#ms_contact-box{
     height: calc(100% - 166px);
     overflow-y: scroll;
-}
-
-.ms_hidden{
-    visibility: hidden;
-}
-
-.ms_show {
-    visibility: visible;
-}
-
-.ms_dropdown-item{
-    
 }

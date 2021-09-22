@@ -28,67 +28,96 @@
             <section id="ms_content-container" class="container-fluid  ">
 
                 <div id="ms_content-row" class="row">
+
                     <div class="col-4  ms_height-100">
+
                         <div class="row ms_height-100 align-items-start bg-white">
+
                             <div id="ms_user" class="col-12 pt-2 pb-2 d-flex justify-content-center align-items-center  ms_gray-bg">
+
                                 <div class="ms_profile-img">
+
                                     <img src="img/avatar_io.jpg" >
+
                                 </div>
+
                                 <div class="ms_contacts-text ps-2 ps-2  flex-grow-1">
+
                                     <h5 class="m-0 pt-3">User Name</h5>
+
                                 </div>
         
                                 <div class="ms_contacts-icons">
+
                                     <h5 class="m-0">
+
                                         <i class="fas fa-circle-notch"></i>
                                         <i class="fas fa-comment-alt"></i>
                                         <i class="fas fa-ellipsis-v"></i>
+
                                     </h5>
+
                                 </div>
+
                             </div>
 
                             <div id="ms_notification-banner" class="col-12 pt-2 pb-2 d-flex">
+
                                 <div id="ms_notification-bell" class="d-flex justify-content-center align-items-center">
+
                                     <h4 class="p-0 m-0"><i class="fas fa-bell-slash "></i></h4>
+
                                 </div>
+
                                 <div id="ms_notification-text" class="ps-2">
+
                                     <h5 class="m-0">Ricevi le notifiche di nuovi messaggi</h5>
                                     <p class="text-decoration-underline m-0">Attiva notifiche desktop</p>
-                                </div>
-                            </div>
 
-                            
+                                </div>
+
+                            </div>
 
                             <div id="ms_contacts-search" class="col-12 d-flex align-items-center pt-2 pb-2">
                                 
                                 <label for="contact-search" class="bg-white"><i class="fas fa-search ms-2 me-2"></i></label>
                                 <input class=" flex-grow-1 border-0" type="text" name="contact-search" id="contact-search"
                                     v-model = "searchKey" placeholder=" Cerca o inizia una nuova chat" >
+
                             </div>
 
-                            <div id="ms_devocambiarlo" class="col-12">
+                            <div id="ms_contact-box" class="col-12">
 
                                 <div class="row">
 
                                     <div class="col-12 p-2 d-flex border-top ms_contact-box"
                                     :class="(user.name.toLowerCase().includes(searchKey.toLowerCase())) ? '' : 'd-none'" v-for="(user, index) in contacts">
+
                                         <div class="ms_profile-img">
+
                                             <img :src="'img/avatar' + user.avatar + '.jpg'" >
+
                                         </div>
+
                                         <div class="ms_contacts-text ps-2 flex-grow-1" @click= 'clickIndex= index'>
+
                                             <h5>{{ user.name }}</h5>
                                             <p>{{ user.messages.at(-1).text }}</p>
+
                                         </div>
+
                                         <div class="ms_contacts_date">
+
                                             <p>{{ user.messages.at(-1).date }}</p>
+
                                         </div>
+
                                     </div>
 
                                 </div>
 
                             </div>
 
-                            
                         </div>
                     </div>
 
@@ -97,38 +126,60 @@
                         <div class="row ms_height-100">
                                                        
                             <div id="ms_selected-contact" class="col-12 pt-2 pb-2 d-flex justify-content-center align-items-center ms_gray-bg ">
+
                                 <div class="ms_profile-img">
+
                                     <img :src="'img/avatar' + contacts[clickIndex].avatar + '.jpg'" >
+
                                 </div>
+
                                 <div class="ms_contacts-text ps-2 flex-grow-1">
+
                                     <h5>{{ contacts[clickIndex].name }}</h5>
                                     <p>Ultimo accesso il {{ contacts[clickIndex].messages.at(-1).date }}</p>
+
                                 </div>
+
                                 <div class="ms_contacts-icons">
+
                                     <h5 class="m-0">
+
                                         <i class="fas fa-search"></i>
                                         <i class="fas fa-paperclip"></i>
                                         <i class="fas fa-ellipsis-v"></i>
+
                                     </h5>
+
                                 </div>
+
                             </div>
                             
                             <div id="ms_chat-box" class="col-12 d-flex flex-column ">
+
                                 <div class=" rounded-3 p-3 mb-3" v-for="(element,index) in contacts[clickIndex].messages"
                                 :class="(element.status === 'sent') ? 'ms_sent' : 'ms_recieved'">
-                                <h5>{{ element.text }}</h5>
-                                <p class="text-end">{{ element.date }}</p>
-                                <div class="ms_dropdown" @click="showDropdownMenu()">
-                                    <p class="text-end">
-                                        <i class="fas fa-chevron-down"></i>
-                                    </p>
-                                    <ul class="ms_dropdown-list ms_hidden">
-                                        <li class="ms_dropdown-item">Info message</li>
-                                        <li class="ms_dropdown-item"@click="deleteMessage(index)">Delete message</li>
-                                    </ul>
+
+                                    <h5>{{ element.text }}</h5>
+                                    <p class="text-end">{{ element.date }}</p>
+
+                                    <div class="ms_dropdown" @click="showDropdownMenu()">
+
+                                        <p class="text-end">
+
+                                            <i class="fas fa-chevron-down"></i>
+
+                                        </p>
+
+                                        <ul class="ms_dropdown-list ms_hidden">
+
+                                            <li class="ms_dropdown-item ">Info message</li>
+                                            <li class="ms_dropdown-item "@click="deleteMessage(index)">Delete message</li>
+
+                                        </ul>
+
+                                    </div>
+
                                 </div>
-                            </div>
-                            
                             
                             </div>
                         
@@ -143,7 +194,7 @@
                         </div>
                     </div>
                     
-                </div>                   <!-- END NEW CODE  -->
+                </div>          
                 
             </section>
             

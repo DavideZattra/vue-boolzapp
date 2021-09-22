@@ -108,6 +108,12 @@ var app = new Vue(
 
 		methods: {
 
+
+			/**
+			 * function used to push a new text message in to the array of the messages
+			 * 
+			 * @param {*} index param that indicates the correct position where push new message
+			 */
 			sendMessage : function(index){
 				let newSentMessage = {
 					date : this.getDateTime(),
@@ -135,7 +141,11 @@ var app = new Vue(
 
 				
 			},
-
+			/**
+			 * function that returns every time the actual date and time
+			 * 
+			 * @returns  date and time with dd/mm/yyyy h:m:s scheme
+			 */
 			getDateTime : function (){
 				let now = new Date();
 				let dd = String(now.getDate()).padStart(2, '0');
@@ -161,6 +171,11 @@ var app = new Vue(
 
 			},
 
+			/**
+			 * function that deletes the selected message from the choosen message array
+			 * 
+			 * @param {*} index that the selected message has in the array
+			 */
 			deleteMessage : function(index){
 				this.contacts[this.clickIndex].messages.splice(index,1);
 			}
@@ -173,16 +188,3 @@ var app = new Vue(
 	
 	
 );
-
-
-// to get the date format required dd/mm/yy h:m:s
-// let now = new Date();
-// let dd = String(now.getDate()).padStart(2, '0');
-// let mm = String(now.getMonth() + 1).padStart(2, '0'); 
-// let yyyy = now.getFullYear();
-// let hour = now.getHours();
-// let minutes = now.getMinutes();
-// let seconds = now.getSeconds();
-// let time = now.getTime()
-
-// now = dd + '/' + mm + '/' + yyyy + ' ' +  hour +':'+ minutes +':'+ seconds;
