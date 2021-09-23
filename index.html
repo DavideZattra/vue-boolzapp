@@ -33,6 +33,7 @@
 
                         <div class="row ms_height-100 align-items-start bg-white">
 
+                            <!-- Main user box -->
                             <div id="ms_user" class="col-12 pt-2 pb-2 d-flex justify-content-center align-items-center  ms_gray-bg">
 
                                 <div class="ms_profile-img">
@@ -61,6 +62,7 @@
 
                             </div>
 
+                            <!-- Notification Banner -->
                             <div id="ms_notification-banner" class="col-12 pt-2 pb-2 d-flex">
 
                                 <div id="ms_notification-bell" class="d-flex justify-content-center align-items-center">
@@ -68,7 +70,6 @@
                                     <h4 class="p-0 m-0"><i class="fas fa-bell-slash "></i></h4>
 
                                 </div>
-
                                 <div id="ms_notification-text" class="ps-2">
 
                                     <h5 class="m-0">Ricevi le notifiche di nuovi messaggi</h5>
@@ -78,6 +79,7 @@
 
                             </div>
 
+                            <!-- Search input of the contacts  -->
                             <div id="ms_contacts-search" class="col-12 d-flex align-items-center pt-2 pb-2">
                                 
                                 <label for="contact-search" class="bg-white"><i class="fas fa-search ms-2 me-2"></i></label>
@@ -90,6 +92,7 @@
 
                                 <div class="row">
 
+                                    <!-- List of contacts  -->
                                     <div class="col-12 p-2 d-flex border-top ms_contact-box"
                                     :class="(user.name.toLowerCase().includes(searchKey.toLowerCase())) ? '' : 'd-none'" v-for="(user, index) in contacts">
 
@@ -124,7 +127,8 @@
                     <div class="col-8 ms_height-100">
                         
                         <div class="row ms_height-100">
-                                                       
+                                        
+                            <!-- Selected contact Side -->
                             <div id="ms_selected-contact" class="col-12 pt-2 pb-2 d-flex justify-content-center align-items-center ms_gray-bg ">
 
                                 <div class="ms_profile-img">
@@ -154,6 +158,7 @@
 
                             </div>
                             
+                            <!-- Chat of the selected contact  -->
                             <div id="ms_chat-box" class="col-12 d-flex flex-column ">
 
                                 <div class=" rounded-3 p-3 mb-3" v-for="(element,index) in contacts[clickIndex].messages"
@@ -182,7 +187,8 @@
                                 </div>
                             
                             </div>
-                        
+                         
+                            <!-- Input for the selected chat  -->
                             <div id="ms_chat-input" class="col-12 d-flex justify-content-center align-items-center">
                                 
                                 <h5 class="ps-2 pe-4"><i class="far fa-smile"></i></h5>
